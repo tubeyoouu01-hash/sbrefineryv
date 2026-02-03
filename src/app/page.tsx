@@ -12,7 +12,7 @@ import { Logo1 } from '@/components/ui/logos/logo1';
 let email1 = "ventas@puertollanorefinery.com"
 // let joined_number1 ="34 917 538 200 / 100 / 000"
 let joined_number1 ="34 917 500 200 / 100 / 000"
-let number1 ="+34 917 538 200"
+let number1 ="+34 917 500 200"
 
 // let blogimgs = [
 //   "https://images.unsplash.com/photo-1574943320219-553eb213f72d?q=80&w=800" , "https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=800" , "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800"
