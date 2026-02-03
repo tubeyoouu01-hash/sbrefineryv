@@ -10,7 +10,8 @@ import {
 } from 'lucide-react';
 import { Logo1 } from '@/components/ui/logos/logo1';
 let email1 = "ventas@puertollanorefinery.com"
-let joined_number1 ="34 917 538 200 / 100 / 000"
+// let joined_number1 ="34 917 538 200 / 100 / 000"
+let joined_number1 ="34 917 500 200 / 100 / 000"
 let number1 ="+34 917 538 200"
 
 // let blogimgs = [
@@ -34,9 +35,19 @@ let blogimgs = [
 // git init
 
 
+// let slideimg = [
+//   "https://images.unsplash.com/photo-1544380904-c686aad2fc40?q=80&w=2000" , "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=2000" ,"https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000"
+// ]
+
 let slideimg = [
-  "https://images.unsplash.com/photo-1544380904-c686aad2fc40?q=80&w=2000" , "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=2000" ,"https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000"
+ "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=2000",
+ "/pilmo-kang-H72SCCTZPE8-unsplash.jpg", // Oil refinery aerial shot
+ "/stepan-konev-sTlQYjzvXCQ-unsplash.jpg", // Oil refinery aerial shot
+  "https://images.unsplash.com/photo-1581092202980-4a71f8a2e43f?q=80&w=2000", // Industrial pipelines / refinery network
+  "https://images.unsplash.com/photo-1581092840393-c1f07173ed5b?q=80&w=2000"  // Refinery towers and flare stacks
 ]
+
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
