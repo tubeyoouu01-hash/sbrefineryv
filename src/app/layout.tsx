@@ -17,29 +17,29 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    default: "PureTollano Refinery",
-    template: "%s | PureTollano Refinery",
+    default: "Puertollano Refinery",
+    template: "%s | Puertollano Refinery",
   },
 
   description:
-    "PureTollano Refinery is a modern petroleum refining company delivering high-quality refined products with a focus on efficiency, safety, and environmental responsibility.",
+    "Puertollano Refinery is a modern petroleum refining company delivering high-quality refined products with a focus on efficiency, safety, and environmental responsibility.",
 
   icons: {
     icon: "/favicon.ico",
   },
 
   openGraph: {
-    title: "PureTollano Refinery",
+    title: "Puertollano Refinery",
     description:
       "A modern petroleum refinery committed to delivering high-quality refined products through advanced technology, safety standards, and sustainable operations.",
-    url: "https://puretollano.com", // change if different
-    siteName: "PureTollano Refinery",
+    url: "https://puertollano.com", // change if different
+    siteName: "puertollano Refinery",
     images: [
       {
         url: "/og-image.png", // put this in /public
         width: 1200,
         height: 630,
-        alt: "PureTollano Refinery – Modern Petroleum Refining",
+        alt: "puertollano Refinery – Modern Petroleum Refining",
       },
     ],
     type: "website",
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "PureTollano Refinery",
+    title: "puertollano Refinery",
     description:
       "Delivering high-quality petroleum products through innovation, efficiency, and responsible refining.",
     images: ["/og-image.png"],
   },
 
   keywords: [
-    "PureTollano Refinery",
+    "puertollano Refinery",
     "petroleum refinery",
     "oil and gas",
     "refined petroleum products",
