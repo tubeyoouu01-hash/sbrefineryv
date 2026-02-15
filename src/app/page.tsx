@@ -57,8 +57,50 @@ let slideimg = [
     window.location.href = `mailto:${email1}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + "\n\n" + message)}`;
   };
 
+// Add inside ES: { ... }
+
+
+// Add inside EN: { ... }
+
+
 const translations = {
   ES: {
+products: {
+  title: "Cartera de Productos",
+  subtitle: "Soluciones Energéticas y Materias Primas",
+  groups: [
+    {
+      id: "oil",
+      name: "Petróleo y Lubricantes",
+      image: "https://images.unsplash.com/photo-1610444583731-971759547f4f?q=80&w=800",
+      items: [
+        { name: "Crudo Brent Refinado", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400" },
+        { name: "Aceites Base (Grupo I/II)", img: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?q=80&w=400" },
+        { name: "Lubricantes Sintéticos", img: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=400" }
+      ]
+    },
+    {
+      id: "fuel",
+      name: "Combustibles",
+      image: "https://images.unsplash.com/photo-1581092840393-c1f07173ed5b?q=80&w=800",
+      items: [
+        { name: "Diésel Euro 6", img: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=400" },
+        { name: "Queroseno Aviación (Jet A-1)", img: "https://images.unsplash.com/photo-1544016768-982d1554f0b9?q=80&w=400" },
+        { name: "Biocombustibles Avanzados", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=400" }
+      ]
+    },
+    {
+      id: "gas",
+      name: "Gases e Hidrógeno",
+      image: "https://images.unsplash.com/photo-1535391821627-5e4c0334aa22?q=80&w=800",
+      items: [
+        { name: "Hidrógeno Verde", img: "https://images.unsplash.com/photo-1620055173007-6b47c0b89b43?q=80&w=400" },
+        { name: "GLP (Butano/Propano)", img: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=400" },
+        { name: "Etileno de Alta Pureza", img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=400" }
+      ]
+    }
+  ]
+},
         contact: {
       title: "Centro de Contacto",
       subtitle: "Solicitudes de Refino y Logística",
@@ -128,6 +170,42 @@ const translations = {
     }
   },
   EN: {
+products: {
+  title: "Product Portfolio",
+  subtitle: "Energy Solutions & Raw Materials",
+  groups: [
+    {
+      id: "oil",
+      name: "Oil & Lubricants",
+      image: "/fulvio-ciccolo-qWl6oAOaMrM-unsplash.jpg",
+      items: [
+        { name: "Refined Brent Crude", img: "/download (3).jpeg" },
+        { name: "Base Oils (Group I/II)", img: "/download (4).jpeg" },
+        { name: "Synthetic Lubricants", img: "/images (1).jpeg" }
+      ]
+    },
+    {
+      id: "fuel",
+      name: "Fuels",
+      image: "/engin-akyurt-f4UbPVbJcjw-unsplash.jpg",
+      items: [
+        { name: "Euro 6 Diesel", img: "/download (2).jpeg" },
+        { name: "Aviation Kerosene (Jet A-1)", img: "https://images.unsplash.com/photo-1544016768-982d1554f0b9?q=80&w=400" },
+        { name: "Advanced Biofuels", img: "/images.jpeg" }
+      ]
+    },
+    {
+      id: "gas",
+      name: "Gas & Hydrogen",
+      image: "/martin-adams-a_PDPUPuNZ8-unsplash.jpg",
+      items: [
+        { name: "Green Hydrogen", img: "/martin-adams-a_PDPUPuNZ8-unsplash.jpg" },
+        { name: "LPG (Butane/Propane)", img: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=400" },
+        { name: "High Purity Ethylene", img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=400" }
+      ]
+    }
+  ]
+},
        contact: {
       title: "Contact Hub",
       subtitle: "Refining & Logistics Inquiries",
@@ -204,7 +282,7 @@ export default function PuertollanoRefinery() {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isForbidden, setIsForbidden] = useState(false);
-
+const [selectedGroup, setSelectedGroup] = useState(null);
   const t = translations[language] || translations['ES'];
 
   useEffect(() => {
@@ -406,6 +484,41 @@ export default function PuertollanoRefinery() {
         </div>
       </section>
 
+
+<section className="py-24 bg-white border-y border-slate-100">
+  <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div className="text-center mb-16">
+      <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-red-600 mb-4">{t.products.subtitle}</h2>
+      <h3 className="text-4xl font-bold text-slate-950">{t.products.title}</h3>
+    </div>
+    
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {t.products.groups.map((group) => (
+        <div 
+          key={group.id} 
+          onClick={() => setSelectedGroup(group)}
+          className={`group relative overflow-hidden h-[400px] border border-slate-200 ${clickableClass}`}
+        >
+          {/* Background Image */}
+          <img src={group.image} className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" alt="" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+          
+          {/* Content Overlay */}
+          <div className="absolute inset-0 p-10 flex flex-col justify-end text-white">
+            <div className="bg-red-600 w-12 h-12 flex items-center justify-center mb-6 shadow-lg">
+              {group.id === 'oil' ? <Droplets size={20} /> : group.id === 'fuel' ? <Zap size={20} /> : <Factory size={20} />}
+            </div>
+            <h4 className="text-2xl font-bold mb-2 uppercase tracking-tighter">{group.name}</h4>
+            <div className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-red-500 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+              {language === 'ES' ? 'Explorar Catálogo' : 'Explore Catalog'} <ArrowUpRight size={14} />
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
       {/* 6. Insights (Blogs) */}
       <section className="py-32 bg-white">
         <div className="max-w-[1800px] mx-auto px-6 lg:px-10">
@@ -496,6 +609,47 @@ export default function PuertollanoRefinery() {
           </div>
         </div>
       </section>
+      {/* Product Modal */}
+{selectedGroup && (
+  <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+    <div className="absolute inset-0 bg-slate-950/60 backdrop-blur-md" onClick={() => setSelectedGroup(null)} />
+    <div className="relative bg-white w-full max-w-3xl animate-in slide-in-from-bottom-10 duration-300 shadow-2xl border border-slate-200 overflow-hidden">
+      
+      {/* Modal Header */}
+      <div className="p-8 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+        <div>
+          <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-red-600 mb-1">{selectedGroup.name}</h2>
+          <h3 className="text-2xl font-bold tracking-tight">{language === 'ES' ? 'Especificaciones de Producto' : 'Product Specifications'}</h3>
+        </div>
+        <button onClick={() => setSelectedGroup(null)} className="p-2 hover:bg-red-600 hover:text-white transition-all rounded-full shadow-sm">
+          <X size={24} />
+        </button>
+      </div>
+
+      {/* Product List with Images */}
+      <div className="p-8 max-h-[60vh] overflow-y-auto grid grid-cols-1 gap-4">
+        {selectedGroup.items.map((item, i) => (
+          <div key={i} className="flex items-center gap-6 p-4 border border-slate-100 hover:border-red-500 transition-all group cursor-default">
+            <div className="w-20 h-20 bg-slate-200 overflow-hidden flex-shrink-0">
+              <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt={item.name} />
+            </div>
+            <div className="flex-1">
+              <span className="text-sm font-black uppercase tracking-widest text-slate-400 block mb-1">REF: P-{1000 + i}</span>
+              <span className="text-lg font-bold text-slate-950 tracking-tight">{item.name}</span>
+            </div>
+            <button className="hidden sm:block text-[10px] font-black uppercase tracking-widest bg-slate-950 text-white px-6 py-3 hover:bg-red-600 transition">
+              {language === 'ES' ? 'Ficha Técnica' : 'More Data'}
+            </button>
+          </div>
+        ))}
+      </div>
+
+      <div className="p-6 bg-slate-50 border-t border-slate-100 text-center">
+        <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mb-0">Certificación ISO 9001:2026 - Control de Calidad Industrial</p>
+      </div>
+    </div>
+  </div>
+)}
 
       {/* 8. Footer */}
       <footer className="bg-white border-t border-slate-200 pt-20 lg:pt-32 pb-12">
