@@ -65,6 +65,7 @@ let slideimg = [
 
 const translations = {
   ES: {
+
 products: {
   title: "Cartera de Productos",
   subtitle: "Soluciones Energéticas y Materias Primas",
@@ -72,29 +73,30 @@ products: {
     {
       id: "oil",
       name: "Petróleo y Lubricantes",
-      image: "https://images.unsplash.com/photo-1610444583731-971759547f4f?q=80&w=800",
+           image: "/fulvio-ciccolo-qWl6oAOaMrM-unsplash.jpg",
+      // image: "https://images.unsplash.com/photo-1610444583731-971759547f4f?q=80&w=800",
       items: [
-        { name: "Crudo Brent Refinado", img: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400" },
-        { name: "Aceites Base (Grupo I/II)", img: "https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?q=80&w=400" },
-        { name: "Lubricantes Sintéticos", img: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=400" }
+        { name: "Crudo Brent Refinado",    img: "/download (3).jpeg"  },
+        { name: "Aceites Base (Grupo I/II)",   img: "/download (4).jpeg"},
+        { name: "Lubricantes Sintéticos",   img: "/images (1).jpeg"  }
       ]
     },
     {
       id: "fuel",
       name: "Combustibles",
-      image: "https://images.unsplash.com/photo-1581092840393-c1f07173ed5b?q=80&w=800",
+    image: "/engin-akyurt-f4UbPVbJcjw-unsplash.jpg",
       items: [
-        { name: "Diésel Euro 6", img: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=400" },
+        { name: "Diésel Euro 6", img: "/download (2).jpeg" },
         { name: "Queroseno Aviación (Jet A-1)", img: "https://images.unsplash.com/photo-1544016768-982d1554f0b9?q=80&w=400" },
-        { name: "Biocombustibles Avanzados", img: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=400" }
+        { name: "Biocombustibles Avanzados",img: "/images.jpeg" }
       ]
     },
     {
       id: "gas",
       name: "Gases e Hidrógeno",
-      image: "https://images.unsplash.com/photo-1535391821627-5e4c0334aa22?q=80&w=800",
+          image: "/martin-adams-a_PDPUPuNZ8-unsplash.jpg",
       items: [
-        { name: "Hidrógeno Verde", img: "https://images.unsplash.com/photo-1620055173007-6b47c0b89b43?q=80&w=400" },
+        { name: "Hidrógeno Verde", img: "/martin-adams-a_PDPUPuNZ8-unsplash.jpg"  },
         { name: "GLP (Butano/Propano)", img: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=400" },
         { name: "Etileno de Alta Pureza", img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=400" }
       ]
